@@ -1,6 +1,4 @@
-/*
- * l = 左边起始位置， r = 右边的起始位置， rightEnd = 右边的终点位置
- */
+
 public class Merge {
 	public static void merge(int a[], int tmpA[], int l, int r, int rightEnd) {
 		int leftEnd = r-1; //the end of the leftside, assume two arrays are close to each other
@@ -11,14 +9,10 @@ public class Merge {
 			if(a[l] <= a[r]) tmpA[tmp++] = a[l++];
 			else			 tmpA[tmp++] = a[r++];
 		}
-		/*
-		 * 复制左边剩下的
-		 */
+		
 		while(l <= leftEnd)
 			tmpA[tmp++] = a[l++];
-		/*
-		 * 复制右边剩下的
-		 */
+		
 		while(r <= rightEnd)
 			tmpA[tmp++] = a[r++];
 		
@@ -39,9 +33,7 @@ public class Merge {
 		}
 	}
 	
-	/*
-	 * 递归模式
-	 */
+	
 	public static void mergeSort(int[] a) {
 		int n = a.length;
 		int[] tmpA = new int[n];
